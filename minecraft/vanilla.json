@@ -1,0 +1,14 @@
+#!/bin/bash
+# Spigot Installation Script
+#
+# Server Files: /mnt/server
+
+mkdir -p /usr/share/man/man1
+
+cd /mnt/server
+
+DOWNLOAD_PATH="https://mirror.skymc.com.tr/jars/vanilla/vanilla-${VERSION}.jar"
+
+MODIFIED_DOWNLOAD=`eval echo $(echo ${DOWNLOAD_PATH} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
+echo -e "Using custom provided download link ${MODIFIED_DOWNLOAD}"
+curl -L ${MODIFIED_DOWNLOAD} -o ${SERVER_JARFILE}
