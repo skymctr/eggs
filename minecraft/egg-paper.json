@@ -29,7 +29,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n# Spigot Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\n\r\nmkdir -p \/usr\/share\/man\/man1\r\n\r\ncd \/mnt\/server\r\n\r\nDOWNLOAD_PATH=\"https:\/\/mirror.skymc.com.tr\/jars\/paper\/paper-${VERSION}.jar\"\r\n\r\nMODIFIED_DOWNLOAD=`eval echo $(echo ${DOWNLOAD_PATH} | sed -e 's\/{{\/${\/g' -e 's\/}}\/}\/g')`\r\necho -e \"Using custom provided download link ${MODIFIED_DOWNLOAD}\"\r\ncurl -L ${MODIFIED_DOWNLOAD} -o ${SERVER_JARFILE}",
+            "script": "#!\/bin\/bash\r\n# Spigot Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\n\r\nmkdir -p \/usr\/share\/man\/man1\r\n\r\ncd \/mnt\/server\r\n\r\nDOWNLOAD_PATH=\"https:\/\/mirror.skymc.com.tr\/jars\/paper\/paper-${VERSION}.jar\"\r\n\r\nMODIFIED_DOWNLOAD=`eval echo $(echo ${DOWNLOAD_PATH} | sed -e 's\/{{\/${\/g' -e 's\/}}\/}\/g')`\r\necho -e \"Download link ${MODIFIED_DOWNLOAD}\"\r\ncurl -L ${MODIFIED_DOWNLOAD} -o ${SERVER_JARFILE}",
             "container": "ghcr.io\/pterodactyl\/installers:alpine",
             "entrypoint": "ash"
         }
